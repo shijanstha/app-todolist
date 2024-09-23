@@ -7,6 +7,7 @@ const todosSchema = new Schema(
       required: true,
     },
     content: String,
+    status: String,
   },
   { timestamps: true }
 );

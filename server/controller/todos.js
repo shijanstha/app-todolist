@@ -22,11 +22,11 @@ export const createTodo = async (req, res) => {
 
 export const updateTodo = async (req, res) => {
   const { id } = req.params;
-  const { title, content } = req.body;
+  const { title, content, status } = req.body;
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).send(`The id ${id} is not valid.`);
+    return res.status(404).send(`${id} is invalid.`);
   }
-  const todo = { title, content, _id: id };
+  const todo = { title, content, status, _id: id };
   await Todo.findByIdAndUpdate(id, todo, { new: true });
   res.json(todo);
 };
@@ -35,8 +35,8 @@ export const deleteTodo = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).send(`The id ${id} is not valid.`);
+    return res.status(404).send(`${id} is invalid.`);
   }
   await Todo.findByIdAndDelete(id);
-  res.json({message:'Todo deleted.'});
+  res.json({ message: "Todo deleted." });
 };

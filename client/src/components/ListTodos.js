@@ -94,10 +94,10 @@ function ListTodos() {
 
                     <p>{todo.content}</p>
                     {todo.status === "completed" && (
-                      <em className="green-text">{todo.status}</em>
+                      <em className="green-text">Completed</em>
                     )}
                     {todo.status === "pending" && (
-                      <em className="red-text">{todo.status}</em>
+                      <em className="red-text">Pending</em>
                     )}
                   </div>
                 </ul>

@@ -95,7 +95,7 @@ function EditTodo() {
           </div>
 
           <div className="row">
-            <div className="input-field col s2">
+            <div className="input-field col s3">
               <i className="material-icons prefix">priority_high</i>
               <select
                 id="status"

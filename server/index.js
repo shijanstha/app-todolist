@@ -18,10 +18,9 @@ const mongodb =
 const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the server");
+  res.send("Server is running");
 });
 
-// Connect to MongoDB and then start the server
 mongoose
   .connect(mongodb)
   .then(() => {
